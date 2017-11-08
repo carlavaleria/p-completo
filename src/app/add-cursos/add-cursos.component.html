@@ -1,5 +1,17 @@
-<div style="text-align:center">
-  <p>
-    add-cursos works!
-  </p>
-</div>
+<p-panel >
+    <br>
+    <span class="ui-float-label">
+        <input id="float-input" type="text" size="30" [value]="nome" (input)="nome = $event.target.value" pInputText> 
+        <label for="float-input">Curso</label>
+    </span>
+
+    <br>
+    <span class="ui-float-label">
+        <input id="float-input" type="text" size="30" [value]="duracao" (input)="duracao = $event.target.value" pInputText> 
+        <label for="float-input">Duração</label>
+    </span>
+    <br>
+    <p-footer>
+        <button pButton type="button" (click)="onclick()" label="Salvar"></button>
+    </p-footer>
+</p-panel>

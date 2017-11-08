@@ -1,8 +1,17 @@
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!
-  </h1>
-</div>
-<app-add-cursos></app-add-cursos>
-<app-grid-cursos></app-grid-cursos>
+<h3 class="first">Default</h3>
+<p-tabView>
+    <p-tabPanel header="Adicionar" leftIcon="fa-plus">
+        <app-add-cursos></app-add-cursos>
+    </p-tabPanel>
+    <p-tabPanel header="Apenas Listar" leftIcon="fa-search">
+        <app-grid-cursos></app-grid-cursos>
+    </p-tabPanel>
+    <p-tabPanel header="Editar ou Excluir" leftIcon="fa-edit">
+        Função de alterar e excluir
+    </p-tabPanel>
+</p-tabView>
+
+
+
+
 
