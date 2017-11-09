@@ -13,8 +13,7 @@ import {InputTextModule} from 'primeng/primeng';
 import {ButtonModule} from 'primeng/primeng';
 import {SplitButtonModule} from 'primeng/primeng';
 import { GridCompletaComponent } from './grid-completa/grid-completa.component';
-import {MessagesModule} from 'primeng/primeng';
-import {MessageModule} from 'primeng/primeng';
+import {DataTableModule,SharedModule} from 'primeng/primeng';
 
 @NgModule({
   declarations: [
@@ -32,10 +31,11 @@ import {MessageModule} from 'primeng/primeng';
     InputTextModule,
     ButtonModule,
     SplitButtonModule,
-    MessagesModule,
-    MessageModule
-    
-    
+    DataTableModule,
+    SharedModule
+           
+  ],
+  exports:[
   ],
   providers: [],
   bootstrap: [AppComponent]
