@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class GridCursosComponent implements OnInit {
 
-  @Input("metodoListar")  metodoListar : any = [];
+  @Input("metodoListar")  metodoListar : any = {};
   
   constructor() { }
 
@@ -16,6 +16,9 @@ export class GridCursosComponent implements OnInit {
     
   }
 
+  metodoAddListar(curso){
+    this.metodoListar.push(curso);
+    //return this.ngOnInit();
+  } 
   
-
 }

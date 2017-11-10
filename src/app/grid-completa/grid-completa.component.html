@@ -1,6 +1,11 @@
 <p-panel >
   <p-header>
-      Header content here
+    <div class="ui-g-12 ui-md-4">
+      <div class="ui-inputgroup">
+          <input type="text" pInputText placeholder="Buscar">   
+          <button pButton type="button" icon="fa-search" class="ui-button-secondary"></button>      
+      </div>
+    </div>
   </p-header>
 
   <div class="table-responsive">
@@ -13,19 +18,19 @@
           <td width="100"></td>
         </tr>
 
-        <tr *ngFor="let curso of cursos" >
+        <tr *ngFor="let curso of metodoListar" >
             <td><input type="text" value="{{ curso.id }}" disabled></td>
             <td><input type="text" value="{{ curso.nome }}" #nomeInput></td>
             <td><input type="text" value="{{ curso.duracao }}" #duracaoInput></td>              
-            <td><button class="btn btn-danger" (click)="deleteCurso( curso.id )"><h3>Excluir</h3></button></td>
-            <td><button type="button" class="btn btn-warning" (click)="alterarCursos( curso.id, nomeInput.value, duracaoInput.value)"><h3>Alterar</h3></button></td>
+            <td><button class="btn btn-danger" (click)="deleteCurso( curso.id )">Excluir</button></td>
+            <td><button type="button" class="btn btn-warning" (click)="alterarCursos( curso.id, nomeInput.value, duracaoInput.value)">Alterar</button></td>
         </tr>
         
       </table>
     </div>
     
   <p-footer>
-      Footer content here
+    
   </p-footer>
 </p-panel>
 

@@ -1,14 +1,14 @@
-<h3 class="first">Default</h3>
+<h3 class="first">Cursos</h3>
 <p-tabView>
     <p-tabPanel header="Adicionar" leftIcon="fa-plus">
-        <app-add-cursos></app-add-cursos>
+        <app-add-cursos (emitirCursoLista)="metodoAddListar($event)"></app-add-cursos>
     </p-tabPanel>
     <p-tabPanel header="Apenas Listar" leftIcon="fa-search">
         <app-grid-cursos [metodoListar]="metodoListar" ></app-grid-cursos>
     </p-tabPanel>
     <p-tabPanel header="Editar ou Excluir" leftIcon="fa-edit">
         Função de alterar e excluir
-        <app-grid-completa></app-grid-completa>
+        <app-grid-completa [metodoListar]="metodoListar" (emitirCursoLista)="metodoAddListar($event)"></app-grid-completa>
     </p-tabPanel>
 </p-tabView>
 

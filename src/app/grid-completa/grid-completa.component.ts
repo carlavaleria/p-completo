@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-grid-completa',
@@ -8,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GridCompletaComponent implements OnInit {
 
+  @Input("metodoListar")  metodoListar : any = {};
+
+  @Output() emitirCursoLista = new EventEmitter();
+
   constructor(private http : HttpClient) { }
 
   ngOnInit() {
+    
   }
 
   deleteCurso(id): void {
@@ -18,8 +23,9 @@ export class GridCompletaComponent implements OnInit {
           ('http://localhost:8080/deletarCursos/'+id)
           .subscribe(
             data => {
-              //this.cursos = (data);
-    
+              this.metodoListar = (data);
+              const teste:string = "curso";
+              this.emitirCursoLista.emit(teste);
             }
           );
         }
@@ -35,9 +41,15 @@ alterarCursos(id, nomeInput, duracaoInput) {
                 data => {
                  //this.cursos = data;
                   console.log(data);
+                  this.metodoListar = data;
+                  this.emitirCursoLista.emit(curso);
                 }
               );
     
           }
 
+          metodoAddListar(curso){
+            this.metodoListar.push(curso);
+            //return this.ngOnInit();
+          }     
 }

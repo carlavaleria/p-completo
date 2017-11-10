@@ -19,12 +19,18 @@ export class AppComponent {
     .subscribe(
       data => {
         this.metodoListar = data;
+        console.log("listou");
         console.log(data);
         //this.cursos = (data);
-        alert("está listando correto");
+        //alert("está listando correto");
       }
     );
 
+  }
+
+  metodoAddListar(curso){
+    this.metodoListar.push(curso);
+    return this.ngOnInit();
   }
 }
 
