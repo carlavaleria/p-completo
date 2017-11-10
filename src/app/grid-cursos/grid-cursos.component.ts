@@ -1,4 +1,4 @@
-import { Component, OnInit , Output , EventEmitter } from '@angular/core';
+import { Component, OnInit , EventEmitter,  Input } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
 @Component({
@@ -7,32 +7,15 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./grid-cursos.component.css']
 })
 export class GridCursosComponent implements OnInit {
+
+  @Input("metodoListar")  metodoListar : any = [];
   
-  @Output() atualizarLista = new EventEmitter();
-
-
-  cursos: any = []; 
-  nome:string = '';
-  duracao:string= '';
-  camposlimpos: string = '';
-
-
-  constructor(private http : HttpClient) { }
+  constructor() { }
 
   ngOnInit() {
-    return this.listarCursos();
+    
   }
 
-  listarCursos(): void{
-    this.http.get
-    ('http://localhost:8080/cursos')
-    .subscribe(
-      data => {
-        //console.log(data);
-        this.cursos = (data);
-        alert("está listando correto");
-      }
-    );
-  }
+  
 
 }

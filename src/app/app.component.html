@@ -4,7 +4,7 @@
         <app-add-cursos></app-add-cursos>
     </p-tabPanel>
     <p-tabPanel header="Apenas Listar" leftIcon="fa-search">
-        <app-grid-cursos></app-grid-cursos>
+        <app-grid-cursos [metodoListar]="metodoListar" ></app-grid-cursos>
     </p-tabPanel>
     <p-tabPanel header="Editar ou Excluir" leftIcon="fa-edit">
         Função de alterar e excluir

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,7 +7,25 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app'; 
+
+  metodoListar: any = [];
+
+  constructor(private http : HttpClient){ }
+
+  
+  ngOnInit(): void{
+    this.http.get
+    ('http://localhost:8080/cursos')
+    .subscribe(
+      data => {
+        this.metodoListar = data;
+        console.log(data);
+        //this.cursos = (data);
+        alert("está listando correto");
+      }
+    );
+
+  }
 }
 
 

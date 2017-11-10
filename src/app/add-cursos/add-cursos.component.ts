@@ -1,6 +1,6 @@
 
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-add-cursos',
@@ -10,10 +10,10 @@ import { Component, OnInit } from '@angular/core';
 
 export class AddCursosComponent implements OnInit {
   
- 
+  emitirCursoLista = new EventEmitter();
  
   constructor(private http: HttpClient) { }
-  
+
   nome:string = "";
   duracao:string = "";
 
@@ -34,6 +34,7 @@ export class AddCursosComponent implements OnInit {
           .subscribe(
             data => {
               console.log(data);
+              this.emitirCursoLista.emit(data);
             }
           );
           

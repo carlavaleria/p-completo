@@ -15,10 +15,10 @@
                 <td>Duração</td>
               </tr>
   
-              <tr *ngFor="let curso of cursos" >
+              <tr *ngFor="let curso of metodoListar" >
                   <td><input type="text" value="{{ curso.id }}" disabled></td>
-                  <td><input type="text" value="{{ curso.nome }}" disabled #nomeInput></td>
-                  <td><input type="text" value="{{ curso.duracao }}" disabled #duracaoInput></td> 
+                  <td><input type="text" value="{{ curso.nome }}" disabled ></td>
+                  <td><input type="text" value="{{ curso.duracao }}" disabled ></td> 
               </tr>
               
             </table>
