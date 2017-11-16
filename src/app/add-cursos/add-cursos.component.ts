@@ -30,7 +30,7 @@ export class AddCursosComponent implements OnInit {
       if(( this.nome != undefined ) && ( this.nome != "") 
       && ( this.duracao != "") && ( this.duracao != undefined)){
         this.http.post
-          ('http://localhost:8080/adicionarCursos', curso)
+          ('http://localhost:8080/', curso)
           .subscribe(
             data => {
               console.log(data);

@@ -7,7 +7,6 @@
         <app-grid-cursos [metodoListar]="metodoListar" ></app-grid-cursos>
     </p-tabPanel>
     <p-tabPanel header="Editar ou Excluir" leftIcon="fa-edit">
-        Função de alterar e excluir
         <app-grid-completa [metodoListar]="metodoListar" (emitirCursoLista)="metodoAddListar($event)"></app-grid-completa>
     </p-tabPanel>
 </p-tabView>

@@ -20,7 +20,7 @@ export class GridCompletaComponent implements OnInit {
 
   deleteCurso(id): void {
           this.http.delete
-          ('http://localhost:8080/deletarCursos/'+id)
+          ('http://localhost:8080/'+id)
           .subscribe(
             data => {
               this.metodoListar = (data);
@@ -30,13 +30,13 @@ export class GridCompletaComponent implements OnInit {
           );
         }
 
-alterarCursos(id, nomeInput, duracaoInput) {
+/*alterarCursos(id, nomeInput, duracaoInput) {
     const curso = {
         id: id,
         nome: nomeInput,
         duracao: duracaoInput
     };
-            this.http.put('http://localhost:8080/alterarCursos', curso)
+            this.http.put('http://localhost:8080/', curso)
             .subscribe(
                 data => {
                  //this.cursos = data;
@@ -46,7 +46,25 @@ alterarCursos(id, nomeInput, duracaoInput) {
                 }
               );
     
-          }
+          }*/
+
+          alterarCursos(id, nomeInput, duracaoInput) {
+            const curso = {
+                id: id,
+                nome: nomeInput,
+                duracao: duracaoInput
+            };
+                    this.http.put('http://localhost:8080/', curso)
+                    .subscribe(
+                        data => {
+                         //this.cursos = data;
+                          console.log(data);
+                          this.metodoListar = data;
+                          this.emitirCursoLista.emit(curso);
+                        }
+                      );
+            
+                  }
 
           metodoAddListar(curso){
             this.metodoListar.push(curso);

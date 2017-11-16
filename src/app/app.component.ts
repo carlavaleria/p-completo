@@ -15,7 +15,7 @@ export class AppComponent {
   
   ngOnInit(): void{
     this.http.get
-    ('http://localhost:8080/cursos')
+    ('http://localhost:8080/')
     .subscribe(
       data => {
         this.metodoListar = data;
