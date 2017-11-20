@@ -1,11 +1,11 @@
 <p-panel >
   <p-header>
-    <div class="ui-g-12 ui-md-4">
+    <!--<div class="ui-g-12 ui-md-4">
       <div class="ui-inputgroup">
           <input type="text" pInputText placeholder="Buscar">   
           <button pButton type="button" icon="fa-search" class="ui-button-secondary"></button>      
       </div>
-    </div>
+    </div>-->
   </p-header>
 
   <!--<div class="table-responsive">
@@ -35,30 +35,31 @@
 
             <p-column field="id" header="Id">
               <ng-template let-curso="rowData" pTemplate="body">
-                <input type="text" value="{{ curso.id }}" disabled>
+                <input type="text" value="{{ curso.id }}" disabled #id>
               </ng-template>
+              
             </p-column>
 
             <p-column field="nome" header="Curso">
               <ng-template let-curso="rowData" pTemplate="body">
-                  <input type="text" value="{{ curso.nome }}" #nomeInput>
+                  <input type="text" value="{{ curso.nome }}" #nome>
               </ng-template>
             </p-column>
 
             <p-column field="duracao" header="Duracao">
               <ng-template let-curso="rowData" pTemplate="body">
-                  <input type="text" value="{{ curso.duracao }}" #duracaoInput>
+                  <input type="text" value="{{ curso.duracao }}" #duracao>
               </ng-template>
             </p-column>
 
             <p-column header="Alterar">
-              <ng-template pTemplate="body">
-                <button pButton icon="fa-pencil" (click)="alterarCursos(curso.id, nomeInput.value, duracaoInput.value)"></button>
+              <ng-template let-curso="rowData" pTemplate="body">
+                <button pButton icon="fa-pencil" (click)="alterarCursos(curso.id, curso.nome, curso.duracao)"></button>
               </ng-template>
             </p-column>
             <p-column header="Excluir">
               <ng-template let-curso="rowData" pTemplate="body">
-                <button pButton icon="fa-trash" (click)="deleteCurso( curso.id )"></button>
+               <button pButton icon="fa-trash" (click)="deleteCurso( curso.id )"></button>
               </ng-template>
             </p-column>
 

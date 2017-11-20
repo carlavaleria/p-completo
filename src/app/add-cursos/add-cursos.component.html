@@ -1,17 +1,20 @@
 <p-panel >
+
     <br>
     <span class="ui-float-label">
-        <input id="float-input" type="text" size="30" [value]="nome" (input)="nome = $event.target.value" pInputText> 
+        <input id="float-input" type="text" size="30" name="nome" pInputText #nome> 
         <label for="float-input">Curso</label>
     </span>
 
     <br>
     <span class="ui-float-label">
-        <input id="float-input" type="text" size="30" [value]="duracao" (input)="duracao = $event.target.value" pInputText> 
+        <input id="float-input" type="text" size="30" name="duracao"  pInputText #duracao> 
         <label for="float-input">Duração</label>
     </span>
     <br>
+    
     <p-footer>
-        <button pButton type="button" (click)="onclick()" label="Salvar"></button>
+        <button pButton type="button" (click)="onclick(nome.value , duracao.value)" label="Salvar"></button>
     </p-footer>
+
 </p-panel>

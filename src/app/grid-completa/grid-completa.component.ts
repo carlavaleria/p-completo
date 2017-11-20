@@ -48,11 +48,11 @@ export class GridCompletaComponent implements OnInit {
     
           }*/
 
-          alterarCursos(id, nomeInput, duracaoInput) {
+          alterarCursos(id, nome, duracao) {
             const curso = {
                 id: id,
-                nome: nomeInput,
-                duracao: duracaoInput
+                nome: nome,
+                duracao: duracao
             };
                     this.http.put('http://localhost:8080/', curso)
                     .subscribe(

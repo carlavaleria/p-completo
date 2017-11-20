@@ -14,21 +14,20 @@ export class AddCursosComponent implements OnInit {
  
   constructor(private http: HttpClient) { }
 
-  nome:string = "";
-  duracao:string = "";
 
   ngOnInit() {
     
   }
  
-  onclick() {
+  onclick(nome:string , duracao:string) {
+    
    const curso = {
-        nome: this.nome,
-        duracao: this.duracao
+        nome: nome,
+        duracao: duracao
       };
       
-      if(( this.nome != undefined ) && ( this.nome != "") 
-      && ( this.duracao != "") && ( this.duracao != undefined)){
+      if(( nome != undefined ) && ( nome != "") 
+      && ( duracao != "") && ( duracao != undefined)){
         this.http.post
           ('http://localhost:8080/', curso)
           .subscribe(
@@ -37,14 +36,13 @@ export class AddCursosComponent implements OnInit {
               this.emitirCursoLista.emit(curso);
             }
           );
-          
+
           alert("Adicionado com sucesso");
         } else{
           console.log("erro");
           alert("Erro!!!  Não é permitido deixar campos em branco!");
-        }
-        this.nome = "";
-        this.duracao = "";     
-  }
+        } 
+
+      }
  
 }
